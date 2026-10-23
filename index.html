@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taskflow · Gerenciador de tarefas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Taskflow</h1>
+    <p class="sub">Organize suas tarefas por prioridade e prazo.</p>
+
+    <form id="form" class="form">
+      <input id="titulo" type="text" placeholder="O que você precisa fazer?" maxlength="80" aria-label="Título da tarefa">
+      <select id="prioridade" aria-label="Prioridade">
+        <option value="baixa">Baixa</option>
+        <option value="media" selected>Média</option>
+        <option value="alta">Alta</option>
+      </select>
+      <input id="prazo" type="date" aria-label="Prazo">
+      <button type="submit">Adicionar</button>
+    </form>
+    <p id="erro" class="erro" role="alert"></p>
+
+    <div class="filtros">
+      <input id="busca" type="search" placeholder="Buscar tarefa" aria-label="Buscar tarefa">
+      <button data-status="todas" aria-pressed="true">Todas</button>
+      <button data-status="pendentes" aria-pressed="false">Pendentes</button>
+      <button data-status="concluidas" aria-pressed="false">Concluídas</button>
+    </div>
+
+    <div class="progresso" aria-hidden="true"><div id="barra"></div></div>
+    <p id="resumo" class="resumo"></p>
+
+    <ul id="lista" class="lista"></ul>
+    <p id="vazio" class="vazio">Nenhuma tarefa por aqui. Adicione a primeira acima.</p>
+  </main>
+
+  <script src="src/tasks.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>

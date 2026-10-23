@@ -1,0 +1,32 @@
+:root { --fundo:#F3F5F9; --tinta:#1B2433; --mudo:#667085; --primaria:#3156D3; --borda:#D9DFE8; }
+* { box-sizing:border-box; margin:0; }
+body { font-family:system-ui,-apple-system,"Segoe UI",sans-serif; background:var(--fundo); color:var(--tinta); line-height:1.5; }
+.app { max-width:680px; margin:0 auto; padding:2rem 1rem 3rem; }
+h1 { font-size:2rem; }
+.sub { color:var(--mudo); margin-bottom:1.25rem; }
+:focus-visible { outline:3px solid var(--primaria); outline-offset:2px; }
+
+input, select, button { font:inherit; padding:.65rem .8rem; border:2px solid var(--borda); border-radius:10px; background:#fff; }
+.form { display:grid; grid-template-columns:1fr auto auto auto; gap:.5rem; }
+.form button { background:var(--primaria); border-color:var(--primaria); color:#fff; font-weight:700; cursor:pointer; }
+.erro { color:#B3261E; min-height:1.4rem; font-size:.9rem; margin:.25rem 0; }
+
+.filtros { display:flex; gap:.5rem; flex-wrap:wrap; margin:.5rem 0 1rem; }
+.filtros input { flex:1; min-width:140px; }
+.filtros button { cursor:pointer; }
+.filtros button[aria-pressed="true"] { background:var(--tinta); color:#fff; border-color:var(--tinta); }
+
+.progresso { height:8px; background:var(--borda); border-radius:99px; overflow:hidden; }
+#barra { height:100%; width:0; background:var(--primaria); transition:width .3s; }
+.resumo { color:var(--mudo); font-size:.9rem; margin:.4rem 0 1rem; }
+
+.lista { list-style:none; padding:0; display:grid; gap:.6rem; }
+.tarefa { display:grid; grid-template-columns:auto 1fr auto; gap:.8rem; align-items:center; background:#fff; border:1px solid var(--borda); border-left:6px solid var(--borda); border-radius:10px; padding:.7rem .9rem; }
+.prio-alta { border-left-color:#D92D20; } .prio-media { border-left-color:#F79009; } .prio-baixa { border-left-color:#12B76A; }
+.tarefa small { display:block; color:var(--mudo); }
+.tarefa small.atrasada { color:#B3261E; font-weight:700; }
+.tarefa.feita .titulo { text-decoration:line-through; color:var(--mudo); }
+.remover { background:none; border:0; color:#B3261E; cursor:pointer; font-weight:700; padding:.3rem; }
+.vazio { text-align:center; color:var(--mudo); padding:1.5rem 0; }
+
+@media (max-width:560px) { .form { grid-template-columns:1fr 1fr; } .form input[type=text] { grid-column:1/-1; } .form button { grid-column:1/-1; } }

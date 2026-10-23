@@ -1,0 +1,9 @@
+{
+  "name": "taskflow",
+  "version": "1.0.0",
+  "description": "Gerenciador de tarefas em JavaScript puro, com testes automatizados e CI.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
